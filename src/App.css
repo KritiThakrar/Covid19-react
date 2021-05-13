@@ -1,38 +1,313 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif !important;
+  background: #fff;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+i{
+  margin-right:10px;
+}
+
+.navbar-logo{
+  padding: 15px;
+  color:#fff!important;
+  pointer-events:none;
+}
+.navbar-mainbg{
+  background-color: #000000;
+  padding:0px;
+}
+#navbarSupportedContent{
+  overflow: hidden;
+  position:relative;
+}
+#navbarSupportedContent ul{
+  padding: 0px;
+  margin: 0px;
+}
+#navbarSupportedContent ul li a i{
+  margin-right: 10px;
+}
+#navbarSupportedContent li {
+  list-style-type: none;
+  float: left;
+}
+#navbarSupportedContent ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none !important;
+  font-size: 15px !important;
+  display: block !important;
+  padding: 20px 20px !important;
+  transition-duration: 0.6s !important; 
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  position: relative !important;
+}
+#navbarSupportedContent > ul > li.activen > a {
+  color: #000000;
+  background-color: transparent;
+  transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+  content: '\f105';
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 14px;
+  font-family: 'Font Awesome 5 Free';
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: 0.5s;
+}
+#navbarSupportedContent .activen > a:not(:only-child):after {
+  transform: rotate(90deg);
+}
+
+.hori-selector {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  bottom: 10px;
+}
+.hori-selector .right {
+  right: -25px;
+}
+.hori-selector .left {
+  left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+.hori-selector .right:before {
+  bottom: 0;
+  right: -25px;
+}
+.hori-selector .left:before {
+  bottom: 0;
+  left: -25px;
+}
+@media (max-width: 991px) {
+  #navbarSupportedContent ul li a {
+    padding: 12px 30px;
+  }
+  .hori-selector {
+    margin-top: 0px;
+    margin-left: 10px;
+    border-radius: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .hori-selector .left,
+  .hori-selector .right {
+    right: 10px;
+  }
+  .hori-selector .left {
+    top: -25px;
+    left: auto;
+  }
+  .hori-selector .right {
+    bottom: -25px;
+  }
+  .hori-selector .left:before {
+    left: -25px;
+    top: -25px;
+  }
+  .hori-selector .right:before {
+    bottom: -25px;
+    left: -25px;
+  }
+}
+.mainPage {
+  background-color: white;
+  height: 20vh;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table-vertical-responsive{
+  height:80rem;
+  overflow-y:scroll;
+  display:inline-block;
 }
 
+.table-horizontal-responsive{
+  overflow-x:scroll;
+}
+
+table, th, td {
+  border: 2px solid green;
+  text-align:left;
+}
+th, td {
+  padding: 20px;
+  background-color:none;
+}
+
+input{
+  border-width:0px;
+  border:none;
+}
+
+/* .fontsearch {
+  position: relative !important;
+} */
+
+.fontsearch i{
+  position:absolute;
+  left: 40px;
+  /* top: 20px; */
+  /* color: gray; */
+  z-index: 1;
+}
+
+.land {
+  fill: #cccccc21;
+  fill-opacity: 1;
+  stroke: #777;
+  stroke-opacity: 1;
+  stroke-width: 2;
+}
+.background {
+  /* background: rgb(14, 12, 27); */
+  overflow-x: hidden;
+  overflow-y:inherit;
+}
+
+.data {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.active {
+  color: blueviolet;
+}
+.confirmed {
+  color: crimson;
+}
+.recod {
+  color: rgb(35, 221, 106);
+}
+.died {
+  color: grey;
+}
+.caseFigActive,
+.caseFigConfirmed,
+.caseFigRecod,
+.caseFigDied {
+  font-size: 30px;
+}
+.svgvisibility {
+  height: 650px !important;
+  width: 100% !important;
+}
+.india {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  /* color: tomato; */
+  margin-bottom: 50px;
+}
+#d3data{
+	width: auto;
+	height: 25vh;
+  /* margin-left:70px */
+}
+
+.worldgraph{
+  padding-top: 200px;
+}
+
+#d3dataworld{
+	width: auto;
+	height: 30vh;
+  /* margin-left:70px */
+}
+
+.chat{
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#map-height{
+  max-height: 40vh;
+}
+
+.main-footer {
+  color: rgb(255, 253, 253);
+  background-color: #000000;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+.chat{
+  text-align: center;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
+.chat-header{
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 50px;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.react-chatbot-kit-chat-container {
+  position: relative;
+  width: 350px;
 }
+.react-chatbot-kit-chat-bot-message {
+  /* background-color: #2898ec; */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: medium;
+  position: relative;
+  width: 150px;
+  margin-left: 0px;
+  text-align: left;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
