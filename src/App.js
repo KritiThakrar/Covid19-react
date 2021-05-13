@@ -18,7 +18,8 @@ const App = () => {
     <Router>
       <Navbar/>
       <main>
-        <Route path="/" exact>
+        <switch>
+        <Route path="/Covid19-react" exact>
           <Home />
         </Route>
         {/* <Route path="/indiamap" exact>
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/chat" exact>
           <Chat/>
         </Route>
+        </switch>
       </main>
     </Router>
     <div className="row">
