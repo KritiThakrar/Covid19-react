@@ -68,7 +68,7 @@ const Navbar =() =>{
                     </div>
 
                     <li className="nav-item activen">
-                        <NavLink className="font-weight-bold nav-link" to="/" exact>
+                        <NavLink className="font-weight-bold nav-link" to="/Covid19-react" exact>
                             {/* <i className="fas fa-tachometer-alt"></i> */}
                             Home
                         </NavLink>
