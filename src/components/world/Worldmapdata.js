@@ -1,31 +1,38 @@
 import React from "react";
-import { MapContainer, GeoJSON} from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import "./Worldmap.css";
+import {useState, useEffect} from 'react'
+import Map from "./Map";
+import axios from 'axios'
+import Loader from './Loader'
+import Header from './Header'
 
-const Worldmapdata = ({ countries }) => {
-    // console.log(countries);
-    const mapStyle = {
-        fillColor: "White",
-        weight: 1,
-        color: "red",
-        // fillOpacity: 1,
-    };
-    const onEachCountry =(country,layer)=>{
-        layer.options.fillColor = country.properties.color;
-        const name=country.properties.ADMIN;
-        let casesText = country.properties.casesText;
-        layer.bindPopup(`${name} , Cases: ${casesText}`);
-        // console.log(country.properties.casesText);
-    }
+const Worldmapdata = () => {
+    const [eventData, seteventData] = useState([])
+    const [loading, setloading] = useState(false)
+
+    useEffect(() => {
+        const fetch = () => {
+            axios.get('https://covid--19-livetracker.herokuapp.com/covid_data_world/get_data_map')
+                .then(request => {
+                    setloading(true)
+                    seteventData(request.data)
+                    // console.log(request.data)
+                    //console.log(eventData)
+                    setloading(false)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+        fetch()
+
+
+
+    }, [])
     return (
-        <MapContainer style={{ height: "80vh" }} zoom={2} center={[20, 60]}>
-            <GeoJSON 
-            style={mapStyle} 
-            data={countries}
-            onEachFeature={onEachCountry}
-            />
-        </MapContainer>
+        <div>
+            {/* <Header /> */}
+            {!loading ? <Map eventData={eventData}></Map> : <Loader />}
+        </div>
     );
 };
 

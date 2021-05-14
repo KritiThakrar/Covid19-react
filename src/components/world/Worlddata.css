@@ -1,0 +1,52 @@
+.worldmap{
+    width:100vw;
+    height:80vh;
+    position: relative;
+  }
+  
+  .loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    justify-content: spa;
+  }
+  .location-info{
+    position:absolute;
+    top:70px;
+    right: 100px;
+    width: 400px;
+    min-height: 100px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    font-size: 15px;
+    color: aliceblue;
+  }
+  .location-info ul{
+    list-style-type: none;
+    padding: 10px;
+  }
+  .location-info li{
+    padding-top: 5px;
+    padding-bottom: 2px;
+    font-size: 15px;
+  }
+  .header{
+    height: 50px;
+    font-size: xx-large;
+    display: flex;
+    position: static;
+    background-color: rgb(114, 150, 29);
+  }
+  .header-icon{
+    color: red;
+    font-size: 50px;
+  }
+  .header-text{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: rgb(13, 34, 90);
+  }
+  

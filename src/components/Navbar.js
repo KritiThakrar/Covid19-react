@@ -73,25 +73,25 @@ const Navbar =() =>{
                             Home
                         </NavLink>
                     </li>
-                    <li className="nav-item activen">
+                    <li className="nav-item">
                         <NavLink className=" font-weight-bold nav-link" to="/world" exact>
                             {/* <i className="fas fa-tachometer-alt"></i> */}
                             WorldData
                         </NavLink>
                     </li>
-                    <li className="nav-item activen">
+                    <li className="nav-item">
                         <NavLink className="font-weight-bold nav-link" to="/worldmap" exact>
                             {/* <i className="fas fa-tachometer-alt"></i> */}
                             Worldmap
                         </NavLink>
                     </li>
-                    <li className="nav-item activen">
+                    <li className="nav-item">
                         <NavLink className=" font-weight-bold nav-link" to="/about" exact>
                             {/* <i className="fas fa-tachometer-alt"></i> */}
                             About
                         </NavLink>
                     </li>
-                    <li className="font-weight-bold nav-item activen">
+                    <li className="font-weight-bold nav-item">
                         <NavLink className="nav-link" to="/chat" exact>
                             Chat
                         </NavLink>

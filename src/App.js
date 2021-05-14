@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 // import Indiamap from "./components/Indiamap";
 import {
   BrowserRouter as Router,
-  Route,
+  Route,Switch,Redirect
 } from "react-router-dom";
 import Chat from "./components/chat/Chat";
 
@@ -18,6 +18,16 @@ const App = () => {
     <Router>
       <Navbar/>
       <main>
+        <Switch>
+        <Route path="/covid19-react-kt" exact>
+          <Home />
+        </Route>
+        <Route path="/Covid19-react" exact>
+          <Home />
+        </Route>
+        <Route path="/home" exact>
+          <Home />
+        </Route>
         <Route path="/" exact>
           <Home />
         </Route>
@@ -36,6 +46,8 @@ const App = () => {
         <Route path="/chat" exact>
           <Chat/>
         </Route>
+        <Redirect to="/"/>
+        </Switch>
       </main>
     </Router>
     <div className="row">

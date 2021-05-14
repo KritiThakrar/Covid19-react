@@ -6,8 +6,6 @@ import Worldtotaldeathscases from "./charts/Worldtotaldeathscases";
 import Worlddailydeathscases from "./charts/Worlddailydeathscases";
 import Worldpredictedconfirmedcases from "./charts/Worldpredictedconfirmedcases";
 import Worldpredicteddeathscases from "./charts/Worldpredicteddeathscases";
-// import Worldmap from "./Worldmap";
-import "leaflet/dist/leaflet.css";
 import "../../App.css";
 
 
